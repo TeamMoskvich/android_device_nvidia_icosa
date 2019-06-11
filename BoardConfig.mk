@@ -33,7 +33,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := darcy,foster,loki
+TARGET_OTA_ASSERT_DEVICE := darcy,foster,loki,icosa
 
 # Board
 TARGET_BOARD_PLATFORM := tegra
@@ -50,7 +50,6 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_BOOTIMAGE_PARTITION_SIZE      := 26738688
 BOARD_RECOVERYIMAGE_PARTITION_SIZE  := 26767360
-BOARD_CACHEIMAGE_PARTITION_SIZE     := 268435456
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 10099646976
 BOARD_SYSTEMIMAGE_PARTITION_SIZE    := 2147483648
 BOARD_VENDORIMAGE_PARTITION_SIZE    := 805306368
@@ -60,7 +59,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/foster/comms
 
 # Graphics
@@ -83,19 +82,10 @@ TARGET_RECOVERY_FSTAB := device/nvidia/foster/initfiles/fstab.foster
 # RenderScript
 OVERRIDE_RS_DRIVER := libnvRSDriver.so
 
-# Wifi related defines
+# Wifi
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-WPA_SUPPLICANT_VERSION      := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_WLAN_DEVICE           := bcmdhd
-BOARD_HOSTAPD_DRIVER        := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
-WIFI_DRIVER_FW_PATH_STA     := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP      := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_P2P     := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_MODULE_ARG      := "iface_name=wlan0"
-WIFI_DRIVER_MODULE_NAME     := "bcmdhd"
+BOARD_HOSTAPD_DRIVER := NL80211
 
 BOARD_HARDWARE_CLASS := device/nvidia/foster/lineagehw/
 

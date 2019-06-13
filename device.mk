@@ -32,7 +32,7 @@ else
 $(call inherit-product, device/nvidia/foster/device_atv.mk)
 endif
 
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 ifneq ("$(wildcard vendor/nvidia/shield/foster.mk)","")
 $(call inherit-product, vendor/nvidia/shield/foster.mk)
@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
     fstab.loki_e_lte \
     fstab.loki_e_wifi \
     fstab.jetson_cv \
+    fstab.icosa \
     init.darcy.rc \
     init.foster_e.rc \
     init.foster_e_hdd.rc \
@@ -62,29 +63,32 @@ PRODUCT_PACKAGES += \
     init.loki_e_common.rc \
     init.loki_foster_e_common.rc \
     init.jetson_cv.rc \
+    init.icosa.rc \
     init.recovery.darcy.rc \
     init.recovery.foster_e.rc \
     init.recovery.foster_e_hdd.rc \
     init.recovery.jetson_cv.rc \
     init.recovery.loki_e_lte.rc \
     init.recovery.loki_e_wifi.rc \
+    init.recovery.icosa.rc \
     power.darcy.rc \
     power.foster_e.rc \
     power.foster_e_hdd.rc \
     power.jetson_cv.rc \
     power.loki_e_lte.rc \
     power.loki_e_wifi.rc \
+    power.icosa.rc \
     ueventd.darcy.rc \
     ueventd.foster_e.rc \
     ueventd.foster_e_hdd.rc \
     ueventd.jetson_cv.rc \
     ueventd.loki_e_lte.rc \
-    ueventd.loki_e_wifi.rc
+    ueventd.loki_e_wifi.rc \
+    ueventd.icosa.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
@@ -117,19 +121,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
     $(LOCAL_PATH)/media/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/media/nvaudio_conf.xml:system/etc/nvaudio_conf.xml
-
-# Bluetooth
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/comms/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
-
-# Camera
-PRODUCT_PACKAGES += Snap
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/camera/nvcamera.conf:system/etc/nvcamera.conf
-
-PRODUCT_PACKAGES += \
-    camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl
 
 # GPS
 PRODUCT_COPY_FILES += \

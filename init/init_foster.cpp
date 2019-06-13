@@ -28,17 +28,49 @@
 #include "init_shield.h"
 #include "service_shield.h"
 
+
+#include <map>
+
+void set_usb_props(shield_init *si)
+{
+	std::map<std::string, std::string> mcommon       = { { "ro.nv.usb.vid",                  "0955" },
+	                                                     { "ro.nv.usb.pid.rndis.acm.adb",    "AF00" },
+	                                                     { "ro.nv.usb.pid.adb",              "7104" },
+	                                                     { "ro.nv.usb.pid.accessory.adb",    "7105" },
+	                                                     { "ro.nv.usb.pid.audio_source.adb", "7106" },
+	                                                     { "ro.nv.usb.pid.ncm",              "7107" },
+	                                                     { "ro.nv.usb.pid.ncm.adb",          "7108" },
+	                                                     { "ro.nv.usb.pid.ecm",              "710B" },
+	                                                     { "ro.nv.usb.pid.ecm.adb",          "710C" },
+	                                                     { "ro.nv.usb.pid.midi",             "7109" },
+	                                                     { "ro.nv.usb.pid.midi.adb",         "710A" } };
+
+	std::map<std::string, std::string> mt210ref      = { { "ro.nv.usb.pid.mtp",              "EE02" },
+	                                                     { "ro.nv.usb.pid.mtp.adb",          "EE03" },
+	                                                     { "ro.nv.usb.pid.rndis",            "EE08" },
+	                                                     { "ro.nv.usb.pid.rndis.adb",        "EE09" },
+	                                                     { "ro.nv.usb.pid.ptp",              "EE04" },
+	                                                     { "ro.nv.usb.pid.ptp.adb",          "EE05" } };
+
+	for (auto const& nvusb : mcommon)
+		si->property_set(nvusb.first, nvusb.second);
+
+	for (auto const& nvusb : mt210ref)
+		si->property_set(nvusb.first, nvusb.second);
+}
+
 void vendor_load_properties()
 {
 	//                                              device    name            model                id  gsm support                               boot device type                 api  dpi
-	std::vector<shield_init::devices> devices = { { "foster", "foster_e",     "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 21, 320 },
-	                                              { "foster", "foster_e_hdd", "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SATA, 21, 320 },
-	                                              { "darcy",  "darcy",        "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 23, 320 },
-	                                              { "foster", "jetson_cv",    "Jetson TX1",        "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 21, 320 },
-	                                              { "foster", "loki_e_lte",   "SHIELD Portable",   "", shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC, 21, 240 },
-	                                              { "foster", "loki_e_wifi",  "SHIELD Portable",   "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 21, 240 } };
+	std::vector<shield_init::devices> devices = { { "foster", "foster_e",     "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 320 },
+	                                              { "foster", "foster_e_hdd", "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SATA,   21, 320 },
+	                                              { "darcy",  "darcy",        "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   23, 320 },
+	                                              { "foster", "jetson_cv",    "Jetson TX1",        "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 320 },
+	                                              { "foster", "loki_e_lte",   "SHIELD Portable",   "", shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC,   21, 240 },
+	                                              { "foster", "loki_e_wifi",  "SHIELD Portable",   "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 240 },
+	                                              { "foster", "icosa",        "Switch",            "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SDCARD, 21, 240 } };
 	shield_init::build_version sav = { "8.0.0", "OPR6.170623.010", "2604118_1256.7693" };
-	std::vector<std::string> parts = { "APP", "CAC", "LNX", "MSC", "UDA", "USP", "MDA", "SOS", "BMP", "vendor" };
+	std::vector<std::string> parts = { "userdata", "system", "vendor" };
 
 	shield_init si(devices, true, sav, parts);
 	si.set_properties();

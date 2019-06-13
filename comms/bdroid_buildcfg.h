@@ -32,7 +32,6 @@
 #define BLE_VND_INCLUDED TRUE
 
 #define BTSNOOP_MEM_BUFFER_SIZE (1024 * 1024)
-#define DEBUG_FS_UART_PATH "/d/70006300.serial/tty_buffer_count"
 
 // To sync with CONN TIMEOUT of pepper
 #define BTM_BLE_CONN_TIMEOUT_DEF 1000

@@ -76,7 +76,7 @@ MAX_EGL_CACHE_SIZE := 4194304
 MAX_EGL_CACHE_ENTRY_SIZE := 262144
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/nvidia/foster/initfiles/fstab.foster
+TARGET_RECOVERY_FSTAB := device/nvidia/foster/initfiles/fstab.icosa
 
 # RenderScript
 OVERRIDE_RS_DRIVER := libnvRSDriver.so

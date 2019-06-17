@@ -5,5 +5,7 @@
 # This fstab is only used for the updater script. Assumes the recovery has made appropriate symlinks
 
 /dev/block/platform/sdhci-tegra.0/by-name/system            /system             ext4      rw                                                                  wait
+/dev/block/platform/sdhci-tegra.0/by-name/boot              /boot               emmc      rw                                                                  wait
+/dev/block/platform/sdhci-tegra.0/by-name/recovery          /recovery           emmc      rw                                                                  wait
 /dev/block/platform/sdhci-tegra.0/by-name/vendor            /vendor             ext4      noatime,rw                                                          wait
 /dev/block/platform/sdhci-tegra.0/by-name/userdata          /data               ext4      noatime,nosuid,nodev,data=ordered,noauto_da_alloc,errors=panic      wait,check,formattable

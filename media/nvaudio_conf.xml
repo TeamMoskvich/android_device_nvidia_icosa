@@ -104,7 +104,7 @@
       <ctl name="x HP R Playback Switch" val="1"/>
       <ctl name="x Stereo DAC MIXL DAC L1 Switch" val="1"/>
       <ctl name="x Stereo DAC MIXR DAC R1 Switch" val="1"/>
-      <ctl name="x HP Playback Volume" val="40,40"/>
+      <ctl name="x HP Playback Volume" val="38,38"/>
       <ctl name="x HP Channel Switch" val="1,1"/>
       <ctl name="x OUT MIXR DAC R1 Switch" val="1"/>
       <ctl name="x OUT MIXL DAC L1 Switch" val="1"/>

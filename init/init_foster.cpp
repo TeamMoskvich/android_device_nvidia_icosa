@@ -61,14 +61,14 @@ void set_usb_props(shield_init *si)
 
 void vendor_load_properties()
 {
-	//                                              device    name            model                id  gsm support                               boot device type                 api  dpi
-	std::vector<shield_init::devices> devices = { { "foster", "foster_e",     "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 320 },
-	                                              { "foster", "foster_e_hdd", "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SATA,   21, 320 },
-	                                              { "darcy",  "darcy",        "SHIELD Android TV", "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   23, 320 },
-	                                              { "foster", "jetson_cv",    "Jetson TX1",        "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 320 },
-	                                              { "foster", "loki_e_lte",   "SHIELD Portable",   "", shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC,   21, 240 },
-	                                              { "foster", "loki_e_wifi",  "SHIELD Portable",   "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 240 },
-	                                              { "foster", "icosa",        "Switch",            "", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SDCARD, 21, 240 } };
+	//                                              device    name            model                manufacturer id  gsm support                               boot device type                 api  dpi
+	std::vector<shield_init::devices> devices = { { "foster", "foster_e",     "SHIELD Android TV", "NVIDIA",    "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 320 },
+	                                              { "foster", "foster_e_hdd", "SHIELD Android TV", "NVIDIA",    "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SATA,   21, 320 },
+	                                              { "darcy",  "darcy",        "SHIELD Android TV", "NVIDIA",    "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   23, 320 },
+	                                              { "foster", "jetson_cv",    "Jetson TX1",        "NVIDIA",    "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 320 },
+	                                              { "foster", "loki_e_lte",   "SHIELD Portable",   "NVIDIA",    "",  shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC,   21, 240 },
+	                                              { "foster", "loki_e_wifi",  "SHIELD Portable",   "NVIDIA",    "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 240 },
+	                                              { "icosa",  "icosa",        "Switch",            "Nintendo",  "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SDCARD, 21, 240 } };
 	shield_init::build_version sav = { "8.0.0", "OPR6.170623.010", "2604118_1256.7693" };
 	std::vector<std::string> parts = { "userdata", "system", "vendor" };
 

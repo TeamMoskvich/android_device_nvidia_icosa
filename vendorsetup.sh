@@ -1,4 +1,4 @@
 add_lunch_combo lineage_foster-eng
 add_lunch_combo lineage_foster-userdebug
 
-add lunch_combo maru_foster-userdebug
+add_lunch_combo maru_foster-userdebug

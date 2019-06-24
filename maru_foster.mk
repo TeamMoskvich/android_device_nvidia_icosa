@@ -14,4 +14,4 @@ $(call inherit-product, vendor/maruos/device-maru.mk)
 $(call inherit-product, vendor/maruos/BoardConfigVendor.mk)
 
 PRODUCT_NAME := maru_foster
-PRODUCT_DEVICE := Maru OS for the Nintendo Switch
+PRODUCT_MODEL := Maru OS for the Nintendo Switch

@@ -8,6 +8,7 @@
 
 import init.loki_foster_e_common.rc
 import init.ndiscovery.rc
+import init.maru.rc
 
 on boot
     chown system system /sys/class/leds/led_lightbar/brightness

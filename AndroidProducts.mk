@@ -17,3 +17,6 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/full_foster.mk \
     $(LOCAL_DIR)/lineage.mk
+
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/maru_foster.mk

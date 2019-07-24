@@ -359,3 +359,5 @@ subsystem video4linux
 
 #Change dvb node owner&group
 /dev/dvb*	0660	system	net_bind_service
+
+/sys/devices/57000000.gpu/devfreq/57000000.gpu max_freq 0664 system system

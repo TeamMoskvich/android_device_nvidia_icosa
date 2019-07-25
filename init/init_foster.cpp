@@ -68,7 +68,7 @@ void vendor_load_properties()
 	                                              { "foster", "jetson_cv",    "Jetson TX1",        "NVIDIA",    "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 320 },
 	                                              { "foster", "loki_e_lte",   "SHIELD Portable",   "NVIDIA",    "",  shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC,   21, 240 },
 	                                              { "foster", "loki_e_wifi",  "SHIELD Portable",   "NVIDIA",    "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC,   21, 240 },
-	                                              { "icosa",  "icosa",        "Switch",            "Nintendo",  "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SDCARD, 21, 320 } };
+	                                              { "icosa",  "icosa",        "Switch",            "Nintendo",  "",  shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::SDCARD, 21, 270 } };
 	shield_init::build_version sav = { "8.0.0", "OPR6.170623.010", "2604118_1256.7693" };
 	std::vector<std::string> parts = { "userdata", "system", "vendor" };
 

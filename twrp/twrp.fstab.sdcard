@@ -1,3 +1,6 @@
-/system         ext4            /dev/block/platform/sdhci-tegra.0/by-name/system
-/data           ext4            /dev/block/platform/sdhci-tegra.0/by-name/userdata
-/vendor         ext4            /dev/block/platform/sdhci-tegra.0/by-name/vendor
+/system       ext4 /dev/block/platform/sdhci-tegra.0/by-name/system
+/external_sd    vfat            /dev/block/platform/sdhci-tegra.0/by-num/p1 /dev/mmcblk1	 flags=display="Micro SDcard";storage;wipeingui;removable
+/boot         emmc /dev/block/platform/sdhci-tegra.0/by-name/boot
+/recovery     emmc /dev/block/platform/sdhci-tegra.0/by-name/recovery
+/vendor       ext4 /dev/block/platform/sdhci-tegra.0/by-name/vendor
+/data         ext4 /dev/block/platform/sdhci-tegra.0/by-name/userdata
